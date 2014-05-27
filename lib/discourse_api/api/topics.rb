@@ -11,6 +11,10 @@ module DiscourseApi
         post "/t/#{topic_id}/invite.json", params
       end
 
+      def topic_invite_user(params)
+        post('/invites.json', params)
+      end
+
       def latest_topics(*args)
         response = get('/latest.json', args)
         response[:body]['topic_list']['topics']
